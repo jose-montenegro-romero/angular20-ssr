@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 //External library
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
 
@@ -6,7 +6,8 @@ import { SsrCookieService } from 'ngx-cookie-service-ssr';
   providedIn: 'root',
 })
 export class CookiesService {
-  constructor(private ssrCookieService: SsrCookieService) { }
+
+  ssrCookieService = inject(SsrCookieService);
 
   set(key: string, value: string, expires?: number): void {
     let expiresTemp = undefined;

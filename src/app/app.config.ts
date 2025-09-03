@@ -19,6 +19,16 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(
       withInterceptors([authInterceptor]), withFetch()
     ),
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    //     provideClientHydration(
+    //   withEventReplay(),
+    //   withIncrementalHydration(),
+    //   withHttpTransferCacheOptions({
+    //     filter: (req: HttpRequest<unknown>) => true, // to filter
+    //     includeHeaders: [], // to include headers
+    //     includePostRequests: false, // to include POST
+    //     includeRequestsWithAuthHeaders: true, // to include with auth
+    //   })
+    // ),
   ]
 };

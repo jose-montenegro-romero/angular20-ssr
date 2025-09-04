@@ -19,11 +19,11 @@ import { Track } from '@models/track';
 import { CardComponent } from '../../shared/components/card/card.component';
 
 @Component({
-    selector: 'app-home-detail',
-    imports: [CommonModule, CardComponent],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    templateUrl: './home-detail.component.html',
-    styleUrl: './home-detail.component.scss'
+  selector: 'app-home-detail',
+  imports: [CommonModule, CardComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './home-detail.component.html',
+  styleUrl: './home-detail.component.scss'
 })
 export class HomeDetailComponent implements OnInit {
   // @Input() id = '';
@@ -36,7 +36,7 @@ export class HomeDetailComponent implements OnInit {
     private homeService: HomeService,
     private homeDetailService: HomeDetailService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.title.set(this.homeDetailService.get().title);
